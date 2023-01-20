@@ -3,7 +3,7 @@ import { Todo } from '../utils/model'
 
 
 const appTodoContext = createContext({
-    todos: []
+    todos: [] 
 })
 
 const TodoContext = ({children}) =>{
