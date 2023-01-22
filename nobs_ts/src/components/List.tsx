@@ -1,15 +1,15 @@
 
 interface ListProps{
     items: string[]; 
-    onClick? :(item:string) =>void
+    onListClick? :(item:string) =>void
 }
 
 // const List:React.FunctionComponent<{items: string[]; onClick? :(item:string) =>void}> = ({items, onClick})=>{
-const List:React.FunctionComponent<ListProps> = ({items, onClick})=>{
+const List:React.FunctionComponent<ListProps> = ({items, onListClick})=>{
     return(
-        <ul>
+        <ul className="ulist">
             {items.map((item, index)=>(
-            <li key={index} onClick={()=>onClick?.(item)}>{item}</li>
+            <li key={index} onClick={()=>onListClick?.(item)} className="liitem">{item}</li>
             ))}
         </ul>
     )

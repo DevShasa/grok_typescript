@@ -32,3 +32,20 @@ max-width: 100%;
   display: flex;
   gap: 1rem;
 }
+
+.ulist{
+  list-style-type: none;
+  display: flex;
+  gap: 5px;
+  margin-block: 10px;
+}
+
+.liitem{
+  padding:5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+.liitem:hover{
+  background-color: rgb(214, 214, 214);
+}
