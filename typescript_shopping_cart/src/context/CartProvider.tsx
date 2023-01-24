@@ -32,8 +32,6 @@ const cartReducer = (state:CartStateType, action:ReducerAction): CartStateType =
         case REDUCER_ACTION_TYPE.ADD:{
             if(!action.payload) throw new Error("Action has no payload")
             const { sku, name , price } = action.payload
-
-            // Remove the item from the cart
             const filteredCart:CartItemType[] = state.cart.filter((item)=>{
                 item.sku != sku
             })
