@@ -92,8 +92,20 @@ max-width: 100%;
   box-shadow: 0 0 5px black; 
 }
 
-.todo_list{
+/* .todo_list{
   width: 50%;
+} */
+.todo_list_container{
+  display: flex;
+  gap: 2rem;
+  
+}
+.todo_list{
+  flex:1;
+}
+.todo_list > h3{
+  margin-top: 1rem;
+  color: white;
 }
 
 .individual_todo{

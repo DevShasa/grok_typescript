@@ -1,20 +1,29 @@
 import React from 'react'
-import { Todo } from '../utils/model'
 import IndividualTodo from './IndividualTodo'
+import { useTodos } from '../context/todoContext'
 
-interface Props{
-    todos:Todo[];
-    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
-}
+const TodoList:React.FC = () => {
 
-const TodoList:React.FC<Props> = ({todos, setTodos}) => {
+    const {pendingTodos, completedTodos } = useTodos()
+
     return (
-        <div className="todo_list">
-            {todos.map((t)=>{
+        <div className="todo_list_container">
+            <div className="todo_list">
+                <h3>Tasks not done</h3>
+                {pendingTodos.map((t)=>{
+                    return(
+                        <IndividualTodo todo={t} key={t.id}/>
+                    )
+                })}
+            </div>
+            <div className="todo_list">
+            <h3>Completed tasks </h3>
+            {completedTodos.map((t)=>{
                 return(
-                    <IndividualTodo todo={t} key={t.id} setTodos={setTodos}/>
+                    <IndividualTodo todo={t} key={t.id}/>
                 )
             })}
+            </div>
         </div>
     )
 }
